@@ -24,5 +24,14 @@
 	<classpathentry kind="lib" path="/base/apps/birt/lib/org.eclipse.emf.ecore_2.11.0.v20150512-0501.jar"/>
 	<classpathentry kind="lib" path="/base/apps/birt/lib/org.eclipse.emf.ecore.xmi_2.11.0.v20150512-0501.jar"/>
 	<classpathentry kind="lib" path="/base/apps/birt/lib/scriptapi.jar"/>
+	<classpathentry kind="lib" path="/base/systemlib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="/base/systemlib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="/base/systemlib/js.jar"/>
+	<classpathentry kind="lib" path="/base/systemlib/mchange-commons-java-0.2.11.jar"/>
+	<classpathentry kind="lib" path="/base/systemlib/mysql-connector-java-5.1.38.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/plugins/org.w3c.css.sac_1.3.1.v200903091627.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/plugins/org.w3c.dom.smil_1.0.1.v200903091627.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/plugins/org.w3c.dom.svg_1.1.0.v201011041433.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/plugins/org.w3c.sac_1.3.0.v201506092134/lib/flute.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
