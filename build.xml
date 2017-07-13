@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="report_runner" default="zip" basedir=".">
+	<target name="init">
+		<property name="build.dir" value="./build" />
+		<property name="classes.dir" value="${build.dir}/classes" />
+		<property name="output.name" value="report_runner" />
+		<property name="base.dir" value="../../base" />
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+	</target>
+	<target name="copylibs" depends="init">
+		<mkdir dir="${build.dir}/lib" />
+		<copy todir="${build.dir}/lib">
+			<fileset dir="${base.dir}/apps/birt/lib">
+				<include name="chartengineapi.jar" />
+				<include name="chartitemapi.jar" />
+				<include name="com.ibm.icu_54.1.1.v201501272100.jar" />
+				<include name="commons-cli-1.0.jar" />
+				<include name="coreapi.jar" />
+				<include name="crosstabcoreapi.jar" />
+				<include name="dataadapterapi.jar" />
+				<include name="dataaggregationapi.jar" />
+				<include name="dataextraction.jar" />
+				<include name="dteapi.jar" />
+				<include name="emitterconfig.jar" />
+				<include name="engineapi.jar" />
+				<include name="flute.jar" />
+				<include name="modelapi.jar" />
+				<include name="modelodaapi.jar" />
+				<include name="odadesignapi.jar" />
+				<include name="org.eclipse.emf.common_2.11.0.v20150512-0501.jar" />
+				<include name="org.eclipse.emf.ecore_2.11.0.v20150512-0501.jar" />
+				<include name="org.eclipse.emf.ecore.xmi_2.11.0.v20150512-0501.jar" />
+				<include name="scriptapi.jar" />
+			</fileset>
+			<fileset dir="${base.dir}/systemlib">
+				<include name="js.jar" />
+				<include name="commons-codec.jar" />
+				<include name="c3p0-0.9.5.2.jar" />
+				<include name="mchange-commons-java-0.2.11.jar" />
+				<include name="mysql-connector-java-5.1.38.jar" />
+			</fileset>
+			<fileset dir="${base.dir}/apps/birt/plugins">
+				<include name="org.w3c.css.sac_1.3.1.v200903091627.jar" />
+				<include name="org.w3c.dom.smil_1.0.1.v200903091627.jar" />
+				<include name="org.w3c.dom.svg_1.1.0.v201011041433.jar" />
+			</fileset>
+			<fileset dir="${base.dir}/apps/birt/plugins/org.w3c.sac_1.3.0.v201506092134/lib">
+				<include name="flute.jar" />
+			</fileset>
+			<!--
+			<fileset dir="C:\eclipse\eclipse-SDK-3.5.2\plugins\">
+				<include name="blackboard.birt.appcontext_2.5.2.2.jar" />
+			</fileset>
+			-->
+			<!--
+			<fileset dir="C:\eclipse\eclipse-SDK-3.5.2\plugins\org.junit4_4.5.0.v20090824">
+				<include name="junit.jar" />
+			</fileset>
+			-->
+		</copy>
+	</target>
+	<target name="compile" depends="copylibs">
+		<javac destdir="${classes.dir}/" debug="true">
+			<classpath>
+				<fileset dir="${build.dir}/lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+			<src path="src/" />
+		</javac>
+		<copy todir="${classes.dir}">
+			<fileset dir=".">
+				<include name="logging.properties" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="jar" depends="compile">
+		<property name="jar.file" value="${build.dir}/${output.name}.jar" />
+		<manifestclasspath property="jar.classpath" jarfile="${jar.file}">
+			<classpath>
+				<fileset dir="${build.dir}/lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</manifestclasspath>
+		<jar destfile="${jar.file}" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="com.ingenico.birt.RunAllReports" />
+				<attribute name="Class-Path" value="${jar.classpath}" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="zip" depends="jar">
+		<zip destfile="${build.dir}/${output.name}.zip" filesonly="false" whenempty="skip" update="false">
+			<fileset dir="${build.dir}/">
+				<include name="${output.name}.jar" />
+			</fileset>
+			<fileset dir="${build.dir}">
+				<include name="lib/*.jar" />
+			</fileset>
+			<fileset dir=".">
+				<include name="../../logging.properties" />
+				<!--
+				<include name="log/readme.txt" />
+				<include name="documentation.html" />
+				-->
+			</fileset>
+			<!--
+			<fileset dir="C:\p4\LS\mainline\projects\reports">
+				<include name="blackboard.birt.lib/*" />
+			</fileset>
+			-->
+		</zip>
+	</target>
+</project>

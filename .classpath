@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/home/steve/.m2/repository/com/mchange/c3p0/0.9.5.2/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="/home/steve/.m2/repository/com/mchange/mchange-commons-java/0.2.11/mchange-commons-java-0.2.11.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/chartengineapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/chartitemapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/com.ibm.icu_54.1.1.v201501272100.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/commons-cli-1.0.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/coreapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/crosstabcoreapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/dataadapterapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/dataaggregationapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/dataextraction.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/dteapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/emitterconfig.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/engineapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/flute.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/modelapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/modelodaapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/odadesignapi.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/org.eclipse.emf.common_2.11.0.v20150512-0501.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/org.eclipse.emf.ecore_2.11.0.v20150512-0501.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/org.eclipse.emf.ecore.xmi_2.11.0.v20150512-0501.jar"/>
+	<classpathentry kind="lib" path="/base/apps/birt/lib/scriptapi.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
